@@ -1,0 +1,7 @@
+#6# Ensure changes remain at reboot :
+# assume root installation , otherwise create installusr with sudo permissions to use pip, apt etc
+# correct netplan setup and adding to /etc/systemd/system/ will ensure services run
+# e.g. nano /etc/systemd/system/EXAMPLE.socket and nano /etc/systemd/system/EXAMPLE.service
+# systemctl enable EXAMPLE.socket
+# systemctl enable EXAMPLE.service
+# systemctl daemon-reload
