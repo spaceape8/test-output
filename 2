@@ -17,3 +17,7 @@ server {
     }
 
 # /home/ourtestdir contains  our Django project files
+# Link ourtest to make enabled :
+ln -s /etc/nginx/sites-available/ourtest /etc/nginx/sites-enabled
+# reload nginx to read new config :
+systemctl restart nginx
