@@ -1,0 +1,34 @@
+#4# Install Django 2.2.2 :
+# assume root installation , otherwise create installusr with sudo permissions to use pip, apt etc
+# update OS to latest :
+apt update
+# install Django and pre-reqs :
+pip install django
+# setup our django project :
+django-admin.py startproject ourtestproject /home/ourtestdir
+# Update our settings :
+nano /home/ourtestdir/ourtestproject/settings.py
+# to include our specifics :
+#examples start below#
+#ALLOWED_HOSTS = ['our_server_domain_or_IP', 'second_domain_or_IP', . . ., 'localhost']
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'ourdb',
+#        'USER': 'ourdbuser',
+#        'PASSWORD': 'f!shH34d',
+#        'HOST': 'localhost',
+#        'PORT': '',
+#    }
+#}
+#STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#examples end above#
+# Now migrate to postgres settings :
+/home/ourtestdir/manage.py makemigrations
+/home/ourtestdir/manage.py migrate
+/home/ourtestdir/manage.py createsuperuser
+/home/ourtestdir/manage.py collectstatic
+# Run a test on localhost port 80 :
+/home/ourtestdir/manage.py runserver 0.0.0.0:80
+# Should see Django on port 80
