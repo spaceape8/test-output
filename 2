@@ -1,0 +1,19 @@
+#2# Install Nginx as Django frontend :
+# assume root installation , otherwise create installusr with sudo permissions to use pip, apt etc
+# update OS to latest :
+apt update
+# install python nginx and pre-reqs :
+apt install python3-pip python3-dev libpq-dev nginx curl
+# edit nginx setup :
+nano /etc/nginx/sites-available/ourtest
+# to show :
+server {
+    listen 80;
+    server_name ourtest_server_domain_or_IP;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/ourtestdir;
+    }
+
+# /home/ourtestdir contains  our Django project files
