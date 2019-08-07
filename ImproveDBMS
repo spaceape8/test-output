@@ -1,0 +1,2 @@
+## Tune and improve DB performance using ALTER ROLE to set DB specifics e.g. :
+ALTER ROLE ourdbuser SET default_transaction_isolation TO 'read committed' ;
