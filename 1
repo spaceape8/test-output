@@ -1,0 +1,12 @@
+#1# Setup static IP addressing
+# create a netplan configuration in the file /etc/netplan/01-netcfg.yaml assume eth0 :
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      addresses:
+        - 10.0.0.2/18
+      gateway4: 10.0.0.1
+# Apply with 'sudo netplan apply'
+
