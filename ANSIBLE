@@ -1,0 +1,27 @@
+#ANSIBLE would require setup of playbook framework roles and tasks in YAML format similar to below :
+
+---
+
+
+
+- name: Install base packages required
+
+  apt:
+
+    state: present
+
+    name:
+
+      - python3-pip     
+
+      - python3-dev
+
+      - libpq-dev 
+
+      - postgresql
+
+      - postgresql-contrib
+
+      - nginx
+
+      - curl
